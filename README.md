@@ -8,26 +8,16 @@ and Explicit Dependencies.
 **Resources**
 - [Selenium](http://www.seleniumhq.org/)
 - [SpecFlow](http://specflow.org/)
-- [FluentAssertions](https://fluentassertions.com/)
-- [SOLID in Testing](http://www.absofttrainings.com/use-solid-principles-to-become-better-automation-tester/)
-- [The Wrong Abstraction](https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction)
-- [Basic Programming Principles](https://www.makeuseof.com/tag/basic-programming-principles/)
-- [Principles of Test Automation](http://xunitpatterns.com/Principles%20of%20Test%20Automation.html)
-- [Software Testing Anti-patterns](http://blog.codepipes.com/testing/software-testing-antipatterns.html)
-- [Overreliance on End to End Testing](https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html)
-- [Cyclomatic and Cognitive Complexity](https://blog.sonarsource.com/cognitive-complexity-because-testability-understandability)
 
 
 
 ### TODO
 - [x] .NET Framework
-- [x] Mac setup
+- [ ] Mac setup
 - [ ] Build scripts (cake?)
-- [ ] Windows setup
+- [x] Windows setup
 - [ ] .NET Standard
 - [ ] Visual Studio guide
-- [ ] Appium
-- [ ] Docker Selenium Grid execution
 
 
 
@@ -84,20 +74,6 @@ Visual Studio needs a little extra configuration. Install these extensions;
 - xUnit.NET 2
 - SpecFlow
 
-#### Install Scoop (Windows Homebrew alternative)
-
-**Requirements**
-- [PowerShell 3](https://www.microsoft.com/en-us/download/details.aspx?id=34595)
-- PowerShell must be enabled for User account
-
-```
-$ set-executionpolicy unrestricted -s cu
-```
-
-Install:
-```
-$ iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
-```
 
 #### Git
 ```
@@ -106,7 +82,7 @@ $ scoop install git
 
 ### Clone
 ``
-$ git clone https://github.com/jukafah/csharp-specflow-selenium.git
+$ git clone https://github.com/ckray27/cucumber_selenium_.net.git
 ``
 
 #### IDE - Rider
@@ -125,19 +101,6 @@ Restore dependencies
 $ nuget restore
 ```
 
-From solution directory
-```
-$ mono "packages/SpecFlow.2.4.1/tools/specflow.exe" GenerateAll -p SpecFlow.Selenium/SpecFlow.Selenium.csproj
-```
-
-Import the generated `feature.cs` files to the same directory as your features.
-
-Tests will now show in the Unit Tests / Test Explorer.
-
-#### IDE - Visual Studio
-
-TODO
-
 #### Running Tests
 You can run them in the Unit Test explorer of your chosen IDE or via command line
 
@@ -151,12 +114,3 @@ Run tests
 $ mono "packages/xunit.runner.console.2.4.1/tools/net452/xunit.console.exe" SpecFlow.Selenium/bin/Debug/SpecFlow.Selenium.dll -xml ./TestResults/xunit.xml
 ```
 
-Selection of browser is through an environment variable. Defaults to Chrome if unprovided.
-```
-$ BROWSER=firefox mono "packages/xunit.runner.console.2.4.1/tools/net452/xunit.console.exe" SpecFlow.Selenium/bin/Debug/SpecFlow.Selenium.dll -xml ./TestResults/xunit.xml
-```
-
-Then you can generate a nice html report via Pickles
-```
-$ mono "packages/Pickles.CommandLine.2.20.1/tools/pickles.exe" --feature-directory=SpecFlow.Selenium/Features/ --output-directory=./TestResults/pickles --link-results-file=./TestResults/xunit.xml --documentation-format=dhtml --test-results-format=xunit2
-```
