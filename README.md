@@ -13,50 +13,10 @@ and Explicit Dependencies.
 
 ### TODO
 - [x] .NET Framework
-- [ ] Mac setup
-- [ ] Build scripts (cake?)
 - [x] Windows setup
 - [ ] .NET Standard
 - [ ] Visual Studio guide
 
-
-
-### Setup - OSx
-
-Download and install [Visual Studio](https://visualstudio.microsoft.com/) or [JetBrains Rider](https://www.jetbrains.com/rider/)
-
-The required .net frameworks should download/install with your IDE of choice.
-
-#### JetBrains Rider
-
-No extra setup necessary
-
-#### Visual Studio
-
-Visual Studio needs a little extra configuration. Install these extensions;
-- xUnit.NET 2
-- SpecFlow
-
-#### Install Homebrew
-```
-$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
-
-After installation:
-```
-$ brew doctor
-Your system is ready to brew
-```
-
-#### Mono
-```
-$ brew install mono
-```
-
-#### Git
-```
-$ brew install git
-```
 
 ### Setup - Windows
 
@@ -64,9 +24,6 @@ Download and install [Visual Studio](https://visualstudio.microsoft.com/) or [Je
 
 The required .net frameworks should download/install with your IDE of choice.
 
-#### JetBrains Rider
-
-No extra setup necessary
 
 #### Visual Studio
 
@@ -77,7 +34,7 @@ Visual Studio needs a little extra configuration. Install these extensions;
 
 #### Git
 ```
-$ scoop install git
+Download the .exe file as per requirement from https://git-scm.com/download/win
 ```
 
 ### Clone
@@ -111,6 +68,8 @@ $ msbuild
 
 Run tests
 ```
-$ mono "packages/xunit.runner.console.2.4.1/tools/net452/xunit.console.exe" SpecFlow.Selenium/bin/Debug/SpecFlow.Selenium.dll -xml ./TestResults/xunit.xml
+Go to the Test explorer via Test-Windows-Test Explprer then you can click on the Run all test 
+or
+Select a feature or scenario then right click on it and select Run selected Tests
 ```
 
