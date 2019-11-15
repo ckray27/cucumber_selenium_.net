@@ -1,0 +1,12 @@
+bin/
+obj/
+.vs/
+
+packages/
+
+runtests.cmd
+SpecRunTestProfile.xsd
+Default.srprofile
+
+.idea/
+*.iml
